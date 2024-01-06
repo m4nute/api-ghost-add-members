@@ -6,7 +6,6 @@ const app = express()
 app.use(
   cors({
     origin: "*",
-    methods: ["POST"],
   })
 )
 app.use(express.json())
