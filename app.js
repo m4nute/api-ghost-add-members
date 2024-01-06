@@ -12,6 +12,10 @@ app.use(
 app.use(express.json())
 const PORT = 3000
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "anahhei" })
+})
+
 app.post("/add/members", async (req, res) => {
   try {
     const GhostAdminAPI = require("@tryghost/admin-api")
