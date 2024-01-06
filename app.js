@@ -5,7 +5,7 @@ const cors = require("cors")
 const app = express()
 app.use(
   cors({
-    origin: "*",
+    origin: "https://manus-trial-project.ghost.io",
   })
 )
 app.use(express.json())
@@ -24,6 +24,7 @@ app.post("/add/members", async (req, res) => {
       version: "v5.0",
       key: process.env.ADMIN_API_KEY,
     })
+
     const email = req.body.email
     console.log(req.body.email)
     const member = await api.members.add({ email })
