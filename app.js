@@ -3,7 +3,13 @@ require("dotenv").config()
 const cors = require("cors")
 
 const app = express()
-app.use(cors({ origin: "*" }))
+app.use(
+  cors({
+    origin: "*",
+    methods: "POST",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+)
 app.use(express.json())
 const PORT = 3000
 
