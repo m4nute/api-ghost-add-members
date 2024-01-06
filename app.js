@@ -25,7 +25,9 @@ app.post("/add/members", async (req, res) => {
       key: process.env.ADMIN_API_KEY,
     })
     const email = req.body.email
+    console.log(req.body.email)
     const member = await api.members.add({ email })
+
     res.status(200).json({ message: "Member added successfully" })
   } catch (e) {
     res.status(500).json({ error: "Internal Server Error", message: e.message })
